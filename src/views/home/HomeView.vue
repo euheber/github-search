@@ -26,6 +26,7 @@ const handleActiveBtn = (btn) => {
 
             <div class="input-container">
                 <input type="text" placeholder="Buscar...">
+                <i class="fa-solid fa-magnifying-glass"></i>
             </div>
         </section>
     </main>

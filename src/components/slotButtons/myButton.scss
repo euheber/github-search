@@ -8,6 +8,8 @@ button {
   width: 186px;
   cursor: pointer;
   transition: .5s ease;
+  font-family: $inter;
+  font-weight: 700;
   &:hover {
     background-color: black;
     color: white;
