@@ -1,0 +1,20 @@
+@import "@/assets/scss/_globals";
+
+button {
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  height: 51px;
+  width: 186px;
+  cursor: pointer;
+  transition: .5s ease;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
+button.active{ 
+    background-color: black;
+    color: white;
+}

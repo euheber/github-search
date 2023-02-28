@@ -1,0 +1,39 @@
+@import "@/assets/scss/_globals";
+
+header {
+  background-color: $generalGreyish;
+  min-height: 52px;
+  margin-bottom: 54px;
+  nav {
+    max-width: 1400px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    h1 {
+      font-family: $inter;
+      font-weight: 700;
+    }
+
+    .logoStyle {
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    ul {
+      display: flex;
+      gap: 1rem;
+      li a{
+       font-family: $inter;
+       font-weight: 700;
+       text-transform: uppercase;
+       transition: .5s ease;
+       &:hover{ 
+        color: $navHover;
+       }
+      }
+    }
+  }
+  
+}
