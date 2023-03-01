@@ -4,10 +4,10 @@
             <i class="fa-brands fa-github"></i>
 
             <div class="choose-options">
-                <myButtonVue :class="[activeBtn === 'repo' ? 'active' : '']" @click="handleInputParamSearch('repo')">
+                <myButtonVue :class="[activeParam === 'repo' ? 'active' : '']" @click="handleInputParamSearch('repo')">
                     Repositório
                 </myButtonVue>
-                <myButtonVue :class="[activeBtn === 'user' ? 'active' : '']" @click="handleInputParamSearch('user')">Usuário
+                <myButtonVue :class="[activeParam === 'user' ? 'active' : '']" @click="handleInputParamSearch('user')">Usuário
                 </myButtonVue>
             </div>
 
@@ -29,26 +29,24 @@ import { useRouter } from "vue-router";
 const router = useRouter()
 
 let paramConfig = ref('')
-let activeBtn = ref('repo')
+let activeParam = ref('repo')
 
 
-const handleInputParamSearch = (btn) => {
-    activeBtn.value = btn
+const handleInputParamSearch = (param) => {
+    activeParam.value = param
 }
 
 const fetchInfo = () => {
-    if (activeBtn.value === 'user') {
+    if (activeParam.value === 'user') {
         router.push({ path: `/userView/${paramConfig.value}` })
         return
     }
 
-    if (activeBtn.value === 'repo') {
+    if (activeParam.value === 'repo') {
         // router.push({ path: `/userView/${paramConfig.value}` })
         return
     }
 }
-
-
 
 </script>
 
