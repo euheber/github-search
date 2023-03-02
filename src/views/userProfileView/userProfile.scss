@@ -1,0 +1,58 @@
+@import "@/assets/scss/_globals";
+
+main {
+  max-width: 1286px;
+  margin: 0 auto;
+  padding-bottom: 1rem;
+}
+
+.profile-container {
+  border: 1px solid rgba(217, 217, 217, 1);
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+  width: 339px;
+  min-height: 500px;
+  padding-inline: 13px;
+  padding-top: 15px;
+  padding-bottom: 61px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  background-color: $generalGreyish;
+  .user-img {
+    width: 300px;
+    height: 300px;
+    border: 1px solid red;
+    margin: 0 auto;
+    filter: drop-shadow(0px 0px 4px #000000);
+    border-radius: 5px;
+    margin-bottom: 14px;
+  }
+
+  .user-info {
+    margin: 0 auto;
+    width: 300px;
+  }
+
+  .header{ 
+    margin-bottom: 44px;
+    h1, h2{
+        font-family: $rubik;
+        font-weight: 300;
+    }
+    h2{
+        color: rgba(117, 117, 117, 1);
+    }
+  }
+
+  .socials{ 
+    ul li{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+        font-family: $rubik;
+        font-weight: 300;
+        color:  rgba(117, 117, 117, 1);
+    }
+  }
+}

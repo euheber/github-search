@@ -1,7 +1,7 @@
 <template>
     <main>
         <section class="user-container">
-            <userCard v-for="user in users.items" :key="user.id" :user="user"/>
+            <userCard v-for="user in users" :key="user.id" :user="user"/>
         </section>
     </main>
 </template>
@@ -16,13 +16,11 @@ const usersName = route.params
 
 let users = ref('')
 
-onMounted(() => {
-    fetch(`https://api.github.com/search/users?q=${usersName.name}&page=1`)
+onMounted(async () => {
+   await fetch(`https://api.github.com/search/users?q=${usersName.name}&page=1`)
         .then(response => response.json())
-        .then(user => users.value = user)
+        .then(user => users.value = user.items)
 })
-
-
 
 </script>
 

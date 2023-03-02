@@ -38,7 +38,7 @@ const handleInputParamSearch = (param) => {
 
 const fetchInfo = () => {
     if (activeParam.value === 'user') {
-        router.push({ path: `/userView/${paramConfig.value}` })
+        router.push({ path: `/usersView/${paramConfig.value}` })
         return
     }
 
