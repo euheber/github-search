@@ -1,0 +1,33 @@
+@import "@/assets/scss/_globals";
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.repository {
+  padding-right: 1rem;
+  border-bottom: 1px solid black;
+  padding-bottom: 1rem;
+  .repo-name {
+    justify-content: space-between;
+    margin-bottom: 15px;
+    h1 {
+      font-family: $rubik;
+      font-weight: 300;
+    }
+  }
+
+  p {
+    font-family: $rubik;
+    font-weight: 300;
+    color: rgba(117, 117, 117, 1);
+    margin-bottom: 10px;
+  }
+
+  .stars{
+    gap: 6px;
+    font-weight: 300;
+    font-family: $rubik;
+  }
+}

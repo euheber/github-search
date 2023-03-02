@@ -6,7 +6,7 @@
 
         <div class="user-name">
             <h1>
-                <RouterLink :to="'/'">{{ user.login }}</RouterLink>
+                <RouterLink :to="`/usersView/profile/${user.login}`">{{ user.login }}</RouterLink>
             </h1>
         </div>
     </div>
