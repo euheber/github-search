@@ -30,8 +30,8 @@
             </div>
 
             <div class="repo-container">
-                <repositoryCardVue v-for="repo in userRepo" :key="repo.id" :repo="repo"/>
-                <myButton class="more" >Ver mais</myButton>
+                <repositoryCardVue v-for="repo in userRepoControl" :key="repo.id" :repo="repo" />
+                <myButton class="more" @click="updateRepoList">Ver mais</myButton>
             </div>
 
         </section>
@@ -46,17 +46,39 @@ import myButton from '../../components/slotButtons/myButton.vue';
 const userName = useRoute().params
 
 const user = ref('')
-const userRepo = ref('')
+let userRepo = ref('')
+
+let firstRepo = ref(0)
+let lastRepo = ref(4)
+let userRepoControl = ref([])
 
 onMounted(async () => {
     await fetch(` https://api.github.com/users/${userName.name}`)
         .then(data => data.json())
         .then(response => user.value = response)
 
+    fetchRepo()
+
+})
+
+
+const fetchRepo = async () => {
     await fetch(`https://api.github.com/users/${userName.name}/repos`)
         .then(data => data.json())
         .then(repo => userRepo.value = repo)
-})
+
+    userRepoControl.value = userRepo.value.slice(firstRepo.value, lastRepo.value)
+}
+
+
+const updateRepoList = () => {
+    firstRepo.value += 4
+    lastRepo.value += 4
+
+    userRepo.value.slice(firstRepo.value, lastRepo.value).forEach(item => {
+        userRepoControl.value.push(item)
+    })
+}
 
 </script>
 
