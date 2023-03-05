@@ -1,7 +1,7 @@
 <template>
     <main>
         <repositoryCard v-for="repo in listOfRepoCopy" :key="repo.id" :repo=repo />
-        <myButton @click="updateRepoList" class="showMoreRepo">Mostrar mais</myButton>
+        <myButton @click="updateRepoList" class="showMoreRepo">Ver mais repositórios</myButton>
     </main>
 </template>
 
