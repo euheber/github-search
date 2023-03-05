@@ -9,8 +9,7 @@ export const favRepositories = defineStore("counter", {
       const item = this.repositories.find((i) => i.id === repository.id)
 
       if (!item) {
-        this.repositories.push(repository)
-        console.log(this.repositories)
+        this.repositories.push({...repository, favorited: true})
         return item
       }
 

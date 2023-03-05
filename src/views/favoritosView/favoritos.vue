@@ -1,8 +1,16 @@
 <template>
-    <h1>Favoritos</h1>
+    <main>
+        <section>
+            <repositoryCard v-for="repo in repositories" :key="repo.id" :repo = repo />
+        </section>
+    </main>
 </template>
 
 <script setup>
+import repositoryCard from '../../components/repositoryCard/repositoryCard.vue';
+import {favRepositories} from '../../stores/favRepository';
+
+const {repositories} = favRepositories()
 
 </script>
 

@@ -16,9 +16,19 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue';
 import { favRepositories } from '../../stores/favRepository'
 import { ref } from 'vue';
 const { addRepo } = favRepositories()
+
+const { repositories } = favRepositories()
+
+onMounted(() => {
+    repositories.forEach(repo => {
+        repo.favorited ? handleFavorited.value = '/icons/yellowStar.svg' : handleFavorited.value = '/icons/stars.svg'
+    })
+})
+
 
 const props = defineProps({
     repo: Object
@@ -27,9 +37,7 @@ const props = defineProps({
 let handleFavorited = ref('/icons/stars.svg')
 
 const handleFavorite = (repo) => {
-
     addRepo(repo) ? handleFavorited.value = '/icons/stars.svg' : handleFavorited.value = '/icons/yellowStar.svg'
-
 }
 </script>
 
