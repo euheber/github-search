@@ -7,7 +7,8 @@
                 <myButtonVue :class="[activeParam === 'repo' ? 'active' : '']" @click="handleInputParamSearch('repo')">
                     Repositório
                 </myButtonVue>
-                <myButtonVue :class="[activeParam === 'user' ? 'active' : '']" @click="handleInputParamSearch('user')">Usuário
+                <myButtonVue :class="[activeParam === 'user' ? 'active' : '']" @click="handleInputParamSearch('user')">
+                    Usuário
                 </myButtonVue>
             </div>
 
@@ -42,10 +43,8 @@ const fetchInfo = () => {
         return
     }
 
-    if (activeParam.value === 'repo') {
-        // router.push({ path: `/userView/${paramConfig.value}` })
-        return
-    }
+    router.push({ path: `/repository/${paramConfig.value}` })
+
 }
 
 </script>
