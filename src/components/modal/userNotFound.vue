@@ -6,7 +6,7 @@
             <div class="info">
                 <h1>Desculpe!</h1>
 
-                <p>Não foi possível encontrar {{ usuario }} desejado!</p>
+                <p>Não foi possível encontrar  o {{ message }} desejado!</p>
             </div>
 
             <button class="confirmBtn" @click="goToHome">Certo</button>
@@ -21,7 +21,7 @@ import { useRouter } from 'vue-router';
 const router = useRouter()
 
 const  props = defineProps({ 
-    usuario: String
+    message: String
 })
 
 let modal = ref(false)

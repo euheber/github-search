@@ -4,4 +4,11 @@ main{
     max-width: 1300px;
     margin: 0 auto;
     height: 400px;
+
+    section h1 {
+        margin-bottom: 42px;
+        font-family: $roboto;
+        font-weight: 400;
+        font-size: 45px;
+    }
 }

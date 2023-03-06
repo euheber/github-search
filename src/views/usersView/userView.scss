@@ -2,6 +2,16 @@
 
 
 main{
-    max-width: 1286px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.user-container{
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.seeMoreUsers{
     margin: 0 auto;
 }

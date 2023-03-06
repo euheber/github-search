@@ -13,7 +13,7 @@
             </div>
 
             <div class="input-container">
-                <input type="text" placeholder="Buscar..." v-model="paramConfig">
+                <input type="text" placeholder="Buscar..." v-model="paramConfig" @keypress.enter="fetchInfo">
                 <i class="fa-solid fa-magnifying-glass" @click="fetchInfo"></i>
             </div>
 
@@ -24,7 +24,6 @@
 
 <script setup>
 import myButtonVue from "../../components/slotButtons/myButton.vue";
-import userNotFound from "../../components/modal/userNotFound.vue";
 import { ref } from 'vue';
 import { useRouter } from "vue-router";
 

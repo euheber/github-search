@@ -1,10 +1,10 @@
 <template>
     <main>
-        <repositoryCard v-for="repo in listOfRepoCopy" :key="repo.id" :repo=repo />
-        <myButton @click="updateRepoList" class="showMoreRepo">Ver mais repositórios</myButton>
+        <repositoryCard v-for="repo in repositoriesOnScreen" :key="repo.id" :repo=repo />
+        <myButton @click="updateRepoList" class="showMoreRepo"  v-if=" !listOfRepo.length < 4 ||  !currentPage === 33">Ver mais repositórios</myButton>
     </main>
 
-    <userNotFound ref="openErrorModal" usuario="repositório"/>
+    <userNotFound ref="openErrorModal" message="repositório" />
 </template>
 
 <script setup>
@@ -13,34 +13,53 @@ import { onMounted, ref } from "vue";
 import myButton from "../../components/slotButtons/myButton.vue";
 import repositoryCard from "../../components/repositoryCard/repositoryCard.vue";
 import userNotFound from "../../components/modal/userNotFound.vue";
+
 const repositoryName = useRoute().params
 
-let listOfRepo = []
+let listOfRepo = ref([])
+let repositoriesOnScreen = ref([])
 let openErrorModal = ref()
-let listOfRepoCopy = ref([])
 
 let firstRepoIndex = ref(0)
-let lastRepoIndex = ref(4)
+let lastRepoIndex = ref(5)
+let currentPage = ref(1)
+
 
 onMounted(async () => {
-    await fetch(`https://api.github.com/search/repositories?q=${repositoryName.name}&page=1`)
+    await fetch(`https://api.github.com/search/repositories?q=${repositoryName.name}&page=${currentPage.value}`)
+        .catch(e => { console.log(e) })
         .then(response => response.json())
-        .then(data => listOfRepo = data.items)
-    listOfRepoCopy.value = listOfRepo.slice(firstRepoIndex.value, lastRepoIndex.value)
+        .then(data => listOfRepo.value = data.items)
+    repositoriesOnScreen.value = listOfRepo.value.slice(firstRepoIndex.value, lastRepoIndex.value)
 
-
-    if(listOfRepo.length === 0) { 
+    if (listOfRepo.value.length === 0) {
         openErrorModal.value.handleModal()
     }
 })
 
 const updateRepoList = () => {
+    if (repositoriesOnScreen.value.length === listOfRepo.value.length) {
+        currentPage.value++
+        fetchMoreData()
+    }
+
+    console.log(listOfRepo.value.length + 'repositorios no arrays')
+    console.log(repositoriesOnScreen.value.length + 'repositorios na tela')
+
     firstRepoIndex.value += 4
     lastRepoIndex.value += 4
-
-    listOfRepo.slice(firstRepoIndex.value, lastRepoIndex.value).forEach(item => {
-        listOfRepoCopy.value.push(item)
+    listOfRepo.value.slice(firstRepoIndex.value, lastRepoIndex.value).forEach(item => {
+        repositoriesOnScreen.value.push(item)
     })
+}
+
+const fetchMoreData = async () => {
+    await fetch(`https://api.github.com/search/repositories?q=${repositoryName.name}&page=${currentPage.value}`)
+        .catch(e => { console.log(e) })
+        .then(response => response.json())
+        .then(data => listOfRepo.value.push(...data.items))
+
+    updateRepoList()
 }
 
 

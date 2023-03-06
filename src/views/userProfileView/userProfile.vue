@@ -54,6 +54,7 @@ let userRepoControl = ref([])
 
 onMounted(async () => {
     await fetch(` https://api.github.com/users/${userName.name}`)
+        .catch(e => console.log(e))
         .then(data => data.json())
         .then(response => user.value = response)
 
@@ -63,6 +64,7 @@ onMounted(async () => {
 
 const fetchRepo = async () => {
     await fetch(`https://api.github.com/users/${userName.name}/repos?direction=desc`)
+        .catch(e => console.log(e))
         .then(data => data.json())
         .then(repo => userRepo.value = repo)
 
@@ -72,7 +74,7 @@ const fetchRepo = async () => {
 const updateRepoList = () => {
     firstRepo.value += 4
     lastRepo.value += 4
-    
+
     userRepo.value.slice(firstRepo.value, lastRepo.value).forEach(item => {
         userRepoControl.value.push(item)
     })

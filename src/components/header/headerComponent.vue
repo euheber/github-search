@@ -1,8 +1,3 @@
-<script setup>
-import { RouterLink } from 'vue-router';
-</script>
-
-
 <template>
     <header>
         <nav>
@@ -10,15 +5,29 @@ import { RouterLink } from 'vue-router';
 
             <ul>
                 <li>
-                    <RouterLink to="/">Início</RouterLink>
+                    <RouterLink to="/" :class="[currentPathname === 'home' ? 'active' : '']">Início</RouterLink>
                 </li>
                 <li>
-                    <RouterLink to="/favoritos">Favoritos</RouterLink>
+                    <RouterLink to="/favoritos" :class="[currentPathname === 'favoritos' ? 'active' : '']">Favoritos</RouterLink>
                 </li>
             </ul>
         </nav>
     </header>
 </template>
+
+<script setup>
+import { RouterLink } from 'vue-router';
+import { useRoute } from 'vue-router';
+import { watchEffect, ref } from 'vue'
+
+const route = useRoute()
+
+let currentPathname = ref('home')
+
+watchEffect(() => {
+    currentPathname.value = route.name
+})
+</script>
 
 
 <style scoped lang="scss" src="./header.scss" />
