@@ -34,8 +34,6 @@ Esse projeto é um teste técnico para empresa Lux One para vaga de desenvolvedo
 
 - [ ] Repositórios que estejam marcados como favoritos ficaram marcados como favoritos em futuras buscas também. Dessa maneira o usuário saberá que aquele repositório já foi favoritado antes. O mesmo vale para os repositórios mostrados dentro da página de perfil de um usuário. Veja no exemplo abaixo
 
-<img src=".github/repositorioFavoritado.png" width="100%" />
-
 Abaixo, feita uma nova busca pelo mesmos repositórios.
 
 <img src=".github/buscarRepositorio.png" width="100%" />
@@ -44,11 +42,14 @@ Abaixo, feita uma nova busca pelo mesmos repositórios.
 
 <img src=".github/perfilDoUsuario.png" width="100%" />
 
-- [ ] O botão para ver mais usuário só aparece quando existem mais usuários para ver. O mesmo vale para repositórios
+- [ ] O botão para ver mais usuários só aparece quando existem mais usuários para ver. O mesmo vale para repositórios
 
 <img src=".github/maisUsuarios.png" width="100%" />
 <img src=".github/procurarUsuario.png" width="100%" />
 
+- [ ] Foi implementado  um filtro dentro do favoritos, facilitando a procura por reposótorios. 
+
+<img src=".github/filtroFavorito.png" width="100%" />
 
 ## 📝 Possíveis melhorias
 
