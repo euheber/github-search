@@ -38,11 +38,11 @@ onMounted(() => {
     }
 
     if (useRoute().name === 'repository') {
-        repositories.some( repository => repository.id === props.repo.id) ? handleFavoritedIcon.value = '/icons/yellowStar.svg' : handleFavoritedIcon.value = '/icons/stars.svg'
+        repositories.some(repository => repository.id === props.repo.id) ? handleFavoritedIcon.value = '/icons/yellowStar.svg' : handleFavoritedIcon.value = '/icons/stars.svg'
     }
 
     if (useRoute().name === 'userProfile') {
-        repositories.some( repository => repository.id === props.repo.id) ? handleFavoritedIcon.value = '/icons/yellowStar.svg' : handleFavoritedIcon.value = '/icons/stars.svg'
+        repositories.some(repository => repository.id === props.repo.id) ? handleFavoritedIcon.value = '/icons/yellowStar.svg' : handleFavoritedIcon.value = '/icons/stars.svg'
     }
 })
 

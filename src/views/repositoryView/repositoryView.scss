@@ -1,13 +1,16 @@
 @import "@/assets/scss/_globals";
 
 
-main{
+main section{
     max-width: 1300px;
     margin: 0 auto;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    @media(max-width: 426px){
+        padding: 1rem;
+    }
 }
 
 .showMoreRepo{
-    margin-left: 40%;
-    margin-block: 1rem;
+    margin: 1rem auto 1rem auto;
 }

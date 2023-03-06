@@ -31,7 +31,7 @@
 
             <div class="repo-container">
                 <repositoryCardVue v-for="repo in userRepoControl" :key="repo.id" :repo="repo" />
-                <myButton class="more" @click="updateRepoList">Ver mais</myButton>
+                <myButton class="moreRepo" @click="updateRepoList">Ver mais</myButton>
             </div>
 
         </section>

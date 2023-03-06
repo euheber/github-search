@@ -4,6 +4,9 @@
 main{
     max-width: 1300px;
     margin: 0 auto;
+    @media(max-width: 426px){
+        padding: 1rem;
+    }
 }
 
 .user-container{

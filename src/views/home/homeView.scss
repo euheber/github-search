@@ -20,14 +20,23 @@ main {
 
   .choose-options {
     display: flex;
+    flex-wrap: wrap;
     gap: 2.563rem;
     margin-bottom: 46px;
+    @media(max-width: 426px){
+      justify-content: center;
+    }
   }
 }
 
 .input-container {
   width: 584px;
   position: relative;
+  
+  @media(max-width: 426px){ 
+    width: 50%;
+  }
+
   .fa-magnifying-glass{
     position: absolute;
     right: 1rem;

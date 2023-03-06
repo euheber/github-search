@@ -4,11 +4,24 @@ main{
     max-width: 1300px;
     margin: 0 auto;
     height: 400px;
-
+    @media(max-width: 426px){
+       padding: 1rem;
+    }
     section h1 {
-        margin-bottom: 42px;
+        margin-bottom: 20px;
         font-family: $roboto;
         font-weight: 400;
         font-size: 45px;
+    }
+}
+
+input{
+    border: 1px solid black;
+    border-radius: 2px;
+    width: 500px;
+    margin-bottom: 20px;
+    padding: 1rem;
+    @media(max-width: 426px){
+        width: 300px;
     }
 }

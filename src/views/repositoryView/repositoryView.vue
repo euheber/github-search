@@ -1,7 +1,9 @@
 <template>
     <main>
+        <section>
         <repositoryCard v-for="repo in repositoriesOnScreen" :key="repo.id" :repo=repo />
         <myButton @click="updateRepoList" class="showMoreRepo"  v-if=" !listOfRepo.length < 4 ||  !currentPage === 33">Ver mais repositórios</myButton>
+    </section>
     </main>
 
     <userNotFound ref="openErrorModal" message="repositório" />
@@ -42,9 +44,6 @@ const updateRepoList = () => {
         currentPage.value++
         fetchMoreData()
     }
-
-    console.log(listOfRepo.value.length + 'repositorios no arrays')
-    console.log(repositoriesOnScreen.value.length + 'repositorios na tela')
 
     firstRepoIndex.value += 4
     lastRepoIndex.value += 4
