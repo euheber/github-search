@@ -1,7 +1,7 @@
 <template>
     <div class="repository ">
         <div class="repo-name flex">
-            <h1><a :href="repo.html_url">{{ repo.name }} </a></h1>
+            <h1><a :href="repo.html_url" class="repoName">{{ repo.name }} </a></h1>
             <img :src="handleFavoritedIcon" alt="Favoritar" @click="handleFavorite(repo)">
         </div>
 
@@ -38,20 +38,18 @@ onMounted(() => {
     }
 
     if (useRoute().name === 'repository') {
-        repositories.forEach(repository => {
-            props.repo.name === repository.name ? handleFavoritedIcon.value = '/icons/yellowStar.svg' : handleFavoritedIcon.value = '/icons/stars.svg'
-        })
+        repositories.some( repository => repository.id === props.repo.id) ? handleFavoritedIcon.value = '/icons/yellowStar.svg' : handleFavoritedIcon.value = '/icons/stars.svg'
+    }
+
+    if (useRoute().name === 'userProfile') {
+        repositories.some( repository => repository.id === props.repo.id) ? handleFavoritedIcon.value = '/icons/yellowStar.svg' : handleFavoritedIcon.value = '/icons/stars.svg'
     }
 })
 
 
 const handleFavorite = (repo) => {
-    addRepo(repo) ? handleFavorited.value = '/icons/stars.svg' : handleFavorited.value = '/icons/yellowStar.svg'
+    addRepo(repo) ? handleFavoritedIcon.value = '/icons/stars.svg' : handleFavoritedIcon.value = '/icons/yellowStar.svg'
 }
-
-
-
-
 
 
 </script>

@@ -4,6 +4,8 @@ import usersView from '../views/usersView/usersView.vue';
 import userProfile from '../views/userProfileView/userProfile.vue'
 import favoritosView from '../views/favoritosView/favoritos.vue';
 import repositoryView from '../views/repositoryView/repositoryView.vue';
+import error404 from '../views/error/error404.vue';
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -32,6 +34,12 @@ const router = createRouter({
       name: 'repository',
       component: repositoryView
     }, 
+    { 
+      path: '/:catchAll(.*)*',
+      name: '404',
+      component: error404
+    }
+
   ]
 })
 

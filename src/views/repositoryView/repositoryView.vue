@@ -3,6 +3,8 @@
         <repositoryCard v-for="repo in listOfRepoCopy" :key="repo.id" :repo=repo />
         <myButton @click="updateRepoList" class="showMoreRepo">Ver mais repositórios</myButton>
     </main>
+
+    <userNotFound ref="openErrorModal" usuario="repositório"/>
 </template>
 
 <script setup>
@@ -10,9 +12,11 @@ import { useRoute } from "vue-router";
 import { onMounted, ref } from "vue";
 import myButton from "../../components/slotButtons/myButton.vue";
 import repositoryCard from "../../components/repositoryCard/repositoryCard.vue";
+import userNotFound from "../../components/modal/userNotFound.vue";
 const repositoryName = useRoute().params
 
 let listOfRepo = []
+let openErrorModal = ref()
 let listOfRepoCopy = ref([])
 
 let firstRepoIndex = ref(0)
@@ -24,6 +28,10 @@ onMounted(async () => {
         .then(data => listOfRepo = data.items)
     listOfRepoCopy.value = listOfRepo.slice(firstRepoIndex.value, lastRepoIndex.value)
 
+
+    if(listOfRepo.length === 0) { 
+        openErrorModal.value.handleModal()
+    }
 })
 
 const updateRepoList = () => {

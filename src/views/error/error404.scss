@@ -1,0 +1,23 @@
+@import "@/assets/scss/_globals";
+
+
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+  h1,
+  h2,
+  p {
+    font-family: $inter;
+    font-weight: 700;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .fa-github {
+    font-size: 10.563rem;
+    text-align: center;
+  }
+}

@@ -8,12 +8,11 @@
 
 <script setup>
 import repositoryCard from '../../components/repositoryCard/repositoryCard.vue';
-import myButton from '../../components/slotButtons/myButton.vue';
 import {favRepositories} from '../../stores/favRepository';
 
 const {repositories} = favRepositories()
 
 </script>
 
-<style scoed lang="scss" src="./favoritos.scss" />
+<style scoped lang="scss" src="./favoritos.scss" />
 

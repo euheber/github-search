@@ -24,6 +24,7 @@
 
 <script setup>
 import myButtonVue from "../../components/slotButtons/myButton.vue";
+import userNotFound from "../../components/modal/userNotFound.vue";
 import { ref } from 'vue';
 import { useRouter } from "vue-router";
 
