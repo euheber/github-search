@@ -1,29 +1,55 @@
-# .
 
-This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
+<p align="center">
+  <img src=".github/preview.png" width="100%" />
+</p>
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## 💻 Projeto
 
-## Customize configuration
+Esse projeto é um teste técnico para empresa Lux One para vaga de desenvolvedor Front End Junior. Nele é possível acessar repositórios e usuários do Github por meio de requisições da API da plataforma.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## 🚀 Tecnologias
 
-## Project Setup
+- [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+- [SASS](https://sass-lang.com/)
+- [Vue JS](https://vuejs.org/)
+- [Pinia](https://pinia.vuejs.org/)
 
-```sh
-npm install
-```
+## 📝 Requisitos do desafio
 
-### Compile and Hot-Reload for Development
+- [ ]  Eu, como usuário, desejo buscar por um usuário do GitHub, me será mostrado uma lista com o(s) usuário(s) com o nome que eu digitei, onde será mostrado o nome de usuário (login). Quando eu clicar no nome do usuário desejo ir para a tela que mostrará os detalhes sobre o usuário;
 
-```sh
-npm run dev
-```
+- [ ]  Eu, como usuário, desejo visualizar os detalhes desse(s) usuário(s) que foi buscado (organização, localização, número de seguidores e repositórios), onde os repositórios tem que ser ordenado em ordem DECRESCENTE;
 
-### Compile and Minify for Production
+- [ ]  Eu, como usuário, desejo visualizar os detalhes desse(s) usuário(s) que foi buscado (organização, localização, número de seguidores e repositórios), onde os repositórios tem que ser ordenado em ordem DECRESCENTE;
 
-```sh
-npm run build
-```
+- [ ]  Eu, como usuário, desejo visualizar os detalhes desse(s) usuário(s) que foi buscado (organização, localização, número de seguidores e repositórios), onde os repositórios tem que ser ordenado em ordem DECRESCENTE;
+
+- [ ]  Eu, como usuário, desejo visualizar uma tela de erro caso eu vá para alguma tela que não exista no projeto.
+
+- [ ]  Eu, como usuário, desejo visualizar uma tela de erro caso eu vá para alguma tela que não exista no projeto.
+
+
+## 📝 Implementações adicionais
+
+- [ ] Repositórios que estejam marcados como favoritos ficaram marcados como favoritos em futuras buscas também. Dessa maneira o usuário saberá que aquele repositório já foi favoritado antes. O mesmo vale para os repositórios mostrados dentro da página de perfil de um usuário. Veja no exemplo abaixo
+
+<img src=".github/favoritos.png" width="100%" />
+
+Abaixo, feita uma nova busca pelo mesmos repositórios.
+
+<img src=".github/repositorioFavoritado.png" width="100%" />
+
+- [ ] Foi acrecentado a renderização condicional de algumas informações do usuário. Uma vez que algumas informações não são preenchidas.  Na imagem abaixo, o icone de empresa onde trabalha não foi renderizado.
+
+<img src=".github/perfilDoUsuario.png" width="100%" />
+
+- [ ] O botão para ver mais usuário só aparece quando existem mais usuários para ver.
+
+<img src=".github/maisUsuarios.png" width="100%" />
+
+
+## 📝 Possíveis melhorias
+
+    Uma possível melhoria para esse projeto, seria salvar os repositórios favoritados dentro da localStorage do navegador. Dessa maneira, as informações não se perderiam ao atualizar a página.
+
