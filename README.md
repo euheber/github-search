@@ -34,22 +34,25 @@ Esse projeto é um teste técnico para empresa Lux One para vaga de desenvolvedo
 
 - [ ] Repositórios que estejam marcados como favoritos ficaram marcados como favoritos em futuras buscas também. Dessa maneira o usuário saberá que aquele repositório já foi favoritado antes. O mesmo vale para os repositórios mostrados dentro da página de perfil de um usuário. Veja no exemplo abaixo
 
-<img src=".github/favoritos.png" width="100%" />
+<img src=".github/repositorioFavoritado.png" width="100%" />
 
 Abaixo, feita uma nova busca pelo mesmos repositórios.
 
-<img src=".github/repositorioFavoritado.png" width="100%" />
+<img src=".github/buscarRepositorio.png" width="100%" />
 
 - [ ] Foi acrecentado a renderização condicional de algumas informações do usuário. Uma vez que algumas informações não são preenchidas.  Na imagem abaixo, o icone de empresa onde trabalha não foi renderizado.
 
 <img src=".github/perfilDoUsuario.png" width="100%" />
 
-- [ ] O botão para ver mais usuário só aparece quando existem mais usuários para ver.
+- [ ] O botão para ver mais usuário só aparece quando existem mais usuários para ver. O mesmo vale para repositórios
 
 <img src=".github/maisUsuarios.png" width="100%" />
+<img src=".github/procurarUsuario.png" width="100%" />
 
 
 ## 📝 Possíveis melhorias
 
-    Uma possível melhoria para esse projeto, seria salvar os repositórios favoritados dentro da localStorage do navegador. Dessa maneira, as informações não se perderiam ao atualizar a página.
+ - [ ]   Uma possível melhoria para esse projeto, seria salvar os repositórios favoritados dentro da localStorage do navegador. Dessa maneira as informações não se perderiam ao atualizar a página.
+
+
 
